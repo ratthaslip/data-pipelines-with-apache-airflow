@@ -11,9 +11,10 @@ dag = DAG(
     schedule_interval="@daily",
 )
 
-
+fetch_weather_forecast = DummyOperator(task_id="fetch_weather_forecast", dag=dag)
 fetch_sales_data = DummyOperator(task_id="fetch_sales_data", dag=dag)
-clean_sales_data = DummyOperator(task_id="clean_sales_data", dag=dag)
+clean_forecast_data = DummyOperator(task_id="clean_forecast_data", dag=dag)
+
 
 
 # Set dependencies between all tasks
