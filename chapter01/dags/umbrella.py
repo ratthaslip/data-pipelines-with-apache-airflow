@@ -24,6 +24,6 @@ fetch_sales_data = BashOperator(task_id="fetch_sales_data",bash_command='echo "f
 
 
 # Set dependencies between all tasks
-fetch_weather_forecast  >> clean_forecast_data
+fetch_weather_forecast >> clean_forecast_data >> join_datasets
 
 
